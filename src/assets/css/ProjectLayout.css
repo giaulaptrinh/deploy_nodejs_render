@@ -1,0 +1,875 @@
+.project-container {
+    padding: 20px;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    height: 100%;
+  }
+  
+  .project-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .project-header h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .create-project-btn {
+    background-color: #ff3b30;
+    border: none;
+    border-radius: 25px;
+    padding: 8px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: auto;
+  }
+  
+  .plus-icon {
+    font-weight: bold;
+    margin-right: 5px;
+  }
+  
+  .project-tabs {
+    display: flex;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 20px;
+    position: relative;
+    align-items: center;
+  }
+  
+  .tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 15px;
+    color: #666;
+  }
+  
+  .tab.active {
+    color: #ff3b30;
+    font-weight: 500;
+    border-bottom: 2px solid #ff3b30;
+  }
+  
+  .view-toggle {
+    margin-left: auto;
+  }
+  
+  .project-table {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+  
+  .table-header {
+    display: flex;
+    background-color: #f8f9fa;
+    padding: 15px 20px;
+    font-weight: 500;
+    color: #555;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .table-row {
+    display: flex;
+    padding: 15px 20px;
+    border-bottom: 1px solid #e0e0e0;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  }
+  
+  .table-row:last-child {
+    margin-bottom: 0;
+  }
+  
+  .table-row:hover {
+    transform: translateY(-3px);
+    border-color: #e0e0e0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    background-color: #ffffff;
+  }
+  
+  .table-row.selected {
+    background-color: #fff;
+    border-left: 3px solid #ff3b30;
+    border-color: #ff3b30;
+    box-shadow: 0 3px 10px rgba(255, 59, 48, 0.15);
+  }
+  
+  .cell, .header-cell {
+    display: flex;
+    align-items: center;
+  }
+  
+  .checkbox-cell {
+    width: 40px;
+  }
+  
+  .name-cell {
+    flex: 1;
+    font-weight: 500;
+  }
+  
+  .members-cell {
+    width: 150px;
+    overflow: visible;
+    position: relative;
+  }
+  
+  .created-by-cell {
+    width: 180px;
+  }
+  
+  .created-at-cell {
+    width: 120px;
+  }
+  
+  .avatar-group {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    overflow: visible;
+    position: relative;
+  }
+  
+  .avatar {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    min-height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    border: 2px solid #fff;
+    position: relative;
+    box-sizing: content-box;
+  }
+  
+  .avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  .members-cell .avatar-group {
+    margin-left: 0;
+  }
+  
+  .members-cell .avatar {
+    margin-left: -4px;
+    z-index: 1;
+  }
+  
+  .members-cell .avatar:first-child {
+    margin-left: 0;
+  }
+  
+  .project-card .avatar-group {
+    margin-top: 8px;
+    max-width: 100%;
+    flex-wrap: nowrap;
+  }
+  
+  .project-card .avatar {
+    z-index: 1;
+  }
+  
+  .member-avatar {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    min-height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    border: 2px solid #fff;
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+  
+  .member-info {
+    flex: 1;
+  }
+  
+  .member-name {
+    font-weight: 500;
+    font-size: 14px;
+  }
+  
+  .member-role {
+    color: #777;
+    font-size: 12px;
+  }
+  
+  .summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+  
+  .summary-label {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .summary-value {
+    font-weight: 500;
+    font-size: 14px;
+  }
+  
+  .progress-section {
+    margin: 15px 0 20px;
+  }
+  
+  .progress-item {
+    margin-bottom: 10px;
+  }
+  
+  .progress-label {
+    font-size: 13px;
+    margin-bottom: 3px;
+  }
+  
+  .progress-value {
+    font-size: 12px;
+    color: #777;
+    text-align: right;
+    margin-bottom: 3px;
+  }
+  
+  .progress-bar {
+    height: 6px;
+    background-color: #e0e0e0;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  
+  .progress-fill {
+    height: 100%;
+    border-radius: 3px;
+  }
+  
+  .detail-btn {
+    background: linear-gradient(135deg, #FC0000, #FF8C00) !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 20px;
+    padding: 5px 15px;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .detail-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(252, 0, 0, 0.3);
+  }
+  
+  .detail-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 3px rgba(252, 0, 0, 0.2);
+  }
+  
+  .go-to-project-btn {
+    background: linear-gradient(135deg, #FC0000, #FF8C00) !important;
+    color: white !important;
+    border: none !important;
+    display: block;
+    width: 100%;
+    border-radius: 4px;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    padding: 8px 0;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .go-to-project-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(252, 0, 0, 0.3);
+  }
+  
+  .go-to-project-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 5px rgba(252, 0, 0, 0.2);
+  }
+  
+  .ai-assistant {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .ai-label {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 5px;
+  }
+  
+  .ai-button {
+    width: 50px;
+    height: 50px;
+    background-color: #ff6d00;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    margin: 0 auto;
+  }
+  
+  /* View Toggle Button */
+  .view-toggle-btn {
+    border-radius: 4px;
+    padding: 6px 12px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    height: 100%;
+  }
+  
+  /* Box View */
+  .project-grid {
+    margin: 0 -10px;
+  }
+  
+  .project-grid .col-md-4 {
+    padding: 10px;
+  }
+  
+  .project-card {
+    margin-bottom: 0;
+    border-radius: 10px;
+    height: 100%;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    padding: 0;
+    transition: all 0.3s ease;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  
+  .project-card.selected {
+    border: 2px solid #ff3b30;
+    box-shadow: 0 4px 8px rgba(255, 59, 48, 0.2);
+  }
+  
+  .card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 15px 15px 0 15px;
+    overflow: visible;
+    position: relative;
+  }
+  
+  .project-card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    background-color: #4caf50;
+    border-radius: 8px;
+    margin-right: 12px;
+    overflow: hidden;
+  }
+  
+  .project-card-icon img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+  }
+  
+  .project-card-title {
+    font-weight: 600;
+    font-size: 16px;
+  }
+  
+  .card-members {
+    margin-bottom: 12px;
+  }
+  
+  .card-description {
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 15px;
+    flex-grow: 1;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    font-size: 12px;
+  }
+  
+  .creator-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .creator-avatar {
+    width: 24px;
+    height: 24px;
+    background-color: #3f51b5;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 12px;
+    margin-right: 8px;
+  }
+  
+  .creator-name {
+    font-weight: 500;
+  }
+  
+  .creation-date {
+    color: #888;
+  }
+  
+  /* Điều chỉnh một số style cho phù hợp với giao diện mới */
+  .detail-btn-container {
+    margin-bottom: 15px;
+  }
+  
+  .detail-btn {
+    border-radius: 20px;
+    padding: 5px 15px;
+  }
+  
+  /* CSS cho view container và animation khi chuyển đổi view */
+  .view-container {
+    transition: opacity 0.3s ease;
+  }
+  
+  .view-container.kanban {
+    min-height: 600px;
+  }
+  
+  /* Animation cho chuyển đổi view modes */
+  .view-container {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Animation cho các thẻ */
+  .animated-items {
+    position: relative;
+  }
+  
+  .animated-item {
+    animation: itemAppear 0.5s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+  
+  /* Animation khi hiển thị các thẻ */
+  @keyframes itemAppear {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Hiệu ứng khi hover lên các thẻ */
+  .table-row:hover {
+    transform: translateY(-3px);
+    border-color: #e0e0e0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    background-color: #ffffff;
+  }
+  
+  .project-card {
+    transition: all 0.3s ease;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border-color: #e0e0e0;
+  }
+  
+  /* Animation khi click vào thẻ */
+  .table-row:active, .project-card:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Hiệu ứng selected */
+  .table-row.selected, .project-card.selected {
+    border: 2px solid #ff3b30;
+    box-shadow: 0 10px 25px rgba(255, 59, 48, 0.2);
+  }
+  
+  /* Delay animation cho từng thẻ */
+  .item-0, .item-box-0 { animation-delay: 0.05s; }
+  .item-1, .item-box-1 { animation-delay: 0.1s; }
+  .item-2, .item-box-2 { animation-delay: 0.15s; }
+  .item-3, .item-box-3 { animation-delay: 0.2s; }
+  .item-4, .item-box-4 { animation-delay: 0.25s; }
+  .item-5, .item-box-5 { animation-delay: 0.3s; }
+  
+  /* Hiệu ứng pulse border khi hover */
+  @keyframes borderPulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(255, 59, 48, 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(255, 59, 48, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(255, 59, 48, 0);
+    }
+  }
+  
+  .project-card:hover {
+    animation: borderPulse 1.5s infinite;
+  }
+  
+  /* Điều chỉnh gutter cho Row trong Bootstrap để đảm bảo đồng bộ */
+  .project-grid .row {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  
+  /* Điều chỉnh avatar group trong box view */
+  .project-card .card-members .avatar-group {
+    display: flex;
+    margin-top: 8px;
+    gap: 4px;
+    align-items: center;
+  }
+  
+  .project-card .avatar {
+    margin-left: -4px;
+    border: 2px solid white;
+  }
+  
+  .project-card .avatar:first-child {
+    margin-left: 0;
+  }
+  
+  /* Điều chỉnh card header để đảm bảo icon và title thẳng hàng */
+  .project-card .card-header {
+    display: flex;
+    padding: 15px 15px 10px 15px;
+    margin-bottom: 10px;
+    border-bottom: none;
+  }
+  
+  .project-card .header-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .project-card .project-card-title {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .project-card-icon {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    background-color: #00c853;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+  }
+  
+  .project-card .avatar-group {
+    display: flex;
+    margin-top: 8px;
+    gap: 4px;
+    align-items: center;
+  }
+  
+  .project-card .avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    color: white;
+    font-size: 13px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-left: 0;
+  }
+  
+  .project-card .avatar:last-child {
+    margin-right: 0;
+  }
+  
+  .project-card .more-avatar {
+    background-color: #ffcdd2;
+    color: #e57373;
+    font-size: 12px;
+  }
+  
+  /* Đảm bảo aspect ratio 1:1 cho avatar */
+  .project-card-icon, .avatar {
+    flex-shrink: 0;
+  }
+  
+  /* Điều chỉnh khoảng cách cho header-content */
+  .project-card .header-content {
+    display: flex;
+    flex-direction: column;
+    padding-left: 2px;
+  }
+  
+  /* Điều chỉnh khoảng cách cho project-card-title */
+  .project-card .project-card-title {
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+  
+  /* Đồng bộ màu avatar giữa panel và cards */
+  .member-item:nth-child(1) .member-avatar { background-color: #ffd54f; }
+  .member-item:nth-child(2) .member-avatar { background-color: #81d4fa; }
+  .member-item:nth-child(3) .member-avatar { background-color: #bcaaa4; }
+  .member-item:nth-child(n+4) .member-avatar { background-color: #ff9800; } /* Màu mặc định cho các member khác */
+  
+  /* Đảm bảo card-description có đủ khoảng cách */
+  .card-description {
+    margin-top: 15px;
+  }
+  
+  .header-content {
+    flex: 1;
+    min-width: 0;
+    overflow: visible;
+  }
+  
+  /* Style cho header của summary */
+  .summary-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .summary-header h5 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  /* Style cho bottom actions */
+  .bottom-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  /* Style cho create-ai button */
+  .create-ai-btn {
+    background-color: #fff !important;
+    color: #ff6d00 !important;
+    border: 1px solid #ff6d00 !important;
+    border-radius: 25px;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+  }
+  
+  .create-ai-btn:hover {
+    background-color: rgba(255, 109, 0, 0.1) !important;
+  }
+  
+  .create-ai-btn i {
+    margin-right: 5px;
+    font-size: 16px;
+  }
+  
+  /* Container cho Create AI button và icon */
+  .create-ai-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 15px;
+  }
+  
+  /* Hình tròn với gradient màu đỏ đến cam */
+  .ai-icon-circle {
+    margin-top: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FC0000, #FF8C00);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  }
+  
+  /* Icon màu trắng bên trong */
+  .ai-icon {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+    filter: brightness(0) invert(1); /* Đảm bảo icon màu trắng */
+  }
+  
+  /* Điều chỉnh style cho project detail panel */
+  .project-detail-panel {
+    /* background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); */
+    padding: 15px;
+    height: 100%;
+    position: relative;
+    font-size: 0.95rem;
+  }
+  
+  /* Thu nhỏ kích thước các phần tử trong panel */
+  .project-title {
+    margin-bottom: 12px;
+  }
+  
+  .project-title h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+  }
+  
+  .project-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .project-description {
+    margin-bottom: 15px;
+    line-height: 1.3;
+    font-size: 0.9rem;
+  }
+  
+  /* Điều chỉnh kích thước cho các project cards trong grid */
+  .project-grid .col-md-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+  
+  /* Thêm media query cho kích thước màn hình lớn hơn */
+  @media (min-width: 992px) {
+    .project-grid .col-md-4 {
+      flex: 0 0 30%;
+      max-width: 30%;
+      margin: 0 1.66%;
+      margin-bottom: 20px;
+    }
+    
+    /* Thêm margin giữa các project cards */
+    .project-grid .row {
+      margin-left: -10px;
+      margin-right: -10px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+  
+  /* Điều chỉnh phần nút trong panel */
+  .go-to-project-btn {
+    font-size: 0.9rem;
+    padding: 6px 0;
+  }
+  
+  .create-ai-btn {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+  }
+  
+  /* Thu nhỏ kích thước các item trong members section */
+  .member-item {
+    margin-bottom: 6px;
+  }
+  
+  .member-avatar {
+    width: 25px;
+    height: 25px;
+    min-width: 25px;
+    min-height: 25px;
+  }
+  
+  .member-name {
+    font-size: 0.85rem;
+  }
+  
+  .member-role {
+    font-size: 0.8rem;
+  }
+  
+  /* Thu nhỏ khoảng cách trong progress section */
+  .progress-section {
+    margin: 10px 0 15px;
+  }
+  
+  .progress-item {
+    margin-bottom: 8px;
+  }
+  
+  .progress-bar {
+    height: 5px;
+  }
+  .col-auto{
+    margin-right: 320px;
+  }

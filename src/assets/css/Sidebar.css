@@ -1,0 +1,174 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    width: 200px;
+    background-color: #f4f5f7;
+    padding: 20px;
+    border-right: 1px solid #000001;
+}
+
+.sidebar-content {
+    flex-grow: 1;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.logo .icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    background-color: #e1e3e6;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.more-popup {
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 300px;
+    left: 120px;
+}
+
+.online-members {
+    margin-top: auto;
+}
+
+.member {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.member-avatar {
+    width: 30px;
+    height: 30px;
+    background-color: #ddd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.member-name {
+    flex-grow: 1;
+}
+
+.member-status {
+    font-size: 12px;
+    color: green;
+}
+
+.more-popup ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+   
+}
+
+.more-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 8px 12px;
+}
+
+.more-text {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Thay width bằng flex-grow để không đẩy icon xuống dòng */
+}
+
+.more-icon {
+    margin-left: 8px; /* Tạo khoảng cách thay vì margin-left: auto */
+    display: inline-block;
+}
+
+.more-item img.icon {
+    margin-right: 8px;
+}
+
+.additional-menu {
+    margin-top: 10px;
+}
+
+.text-only-menu {
+    border-top: 1px solid #e0e0e0;
+    padding-top: 8px;
+    margin-top: 8px;
+}
+
+.new-tab-menu {
+    border-top: 1px solid #e0e0e0;
+    padding-top: 8px;
+    margin-top: 8px;
+}
+
+.text-only-item {
+    padding: 10px;
+    cursor: pointer;
+    color: #333;
+}
+
+.text-only-item:hover {
+    background-color: #e1e3e6;
+}
+
+.project-item {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-icon {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #666;
+    font-size: 10px;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.close-icon:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #333;
+}
+
