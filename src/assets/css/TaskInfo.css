@@ -1,0 +1,129 @@
+.task-info {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    width: 100%; /* Đảm bảo lấp đầy container cha */
+    margin-right: 0; /* Xóa margin âm */
+    position: relative; /* Để có thể định vị đúng */
+    z-index: 1; /* Đảm bảo nội dung không bị che khuất */
+    
+
+}
+.task-info-container {
+    width: 100%; /* Tăng độ rộng lên cao hơn nhiều */
+    overflow-x: hidden; /* Ngăn không cho nội dung tràn ra ngoài theo chiều ngang */
+    padding-right: 50px; /* Thêm padding bên phải */
+    border-right: 1px solid rgb(4, 8, 16);
+}
+
+.task-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.task-description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.task-info-details {
+    display: grid;
+    gap: 10px;
+}
+
+.task-field {
+    display: flex;
+    align-items: center; /* Canh hàng theo chiều dọc */
+    gap: 8px; /* Tạo khoảng cách giữa tên trường và nội dung */
+    background: #fff;
+    padding: 8px 12px;
+}
+
+.task-status {
+    background: #dcd6f7;
+    padding: 2px 6px;
+    border-radius: 6px;
+}
+
+.task-priority.high {
+    color: #ff4d4f;
+    font-weight: bold;
+}
+
+.task-position {
+    background: #a7f3d0;
+    padding: 2px 6px;
+    border-radius: 6px;
+}
+
+.task-attachments {
+    margin-top: 20px;
+}
+
+.attachment-list {
+    display: flex;
+    gap: 10px;
+    width: 180px;
+    height: 126px;
+    margin-top: 10px;
+}
+
+.attachment {
+    background: #fff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.attachment:hover {
+    background: #e6f7ff;
+}
+
+.status-section {
+    margin: 20px 0;
+    background: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.status-indicator {
+    width: 8px;
+    height: 8px;
+    background: #4CAF50;
+    border-radius: 50%;
+}
+
+.status-content p {
+    margin: 4px 0;
+    font-size: 14px;
+}
+
+.status-subtext {
+    color: #666;
+    font-size: 12px;
+}
+
+.drop-zone {
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 5px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.drop-zone p {
+    color: #666;
+    margin: 0;
+}
