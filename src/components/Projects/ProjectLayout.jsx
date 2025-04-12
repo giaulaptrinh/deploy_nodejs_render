@@ -1,131 +1,237 @@
-import React, { useState } from 'react';
-import { Container, Row, Col, Button, Form, Dropdown } from 'react-bootstrap';
-import '../../assets/css/ProjectLayout.css';
+import React, { useState } from "react";
+import { Container, Row, Col, Button, Form, Dropdown } from "react-bootstrap";
+import "..//../assets/css/Projects/ProjectLayout.css"; // Import your CSS file here
 
 const ProjectsLayout = () => {
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
-  const [activeTab, setActiveTab] = useState('All');
-  const [viewMode, setViewMode] = useState('list'); // 'list' hoặc 'box'
+  const [activeTab, setActiveTab] = useState("All");
+  const [viewMode, setViewMode] = useState("list"); // 'list' hoặc 'box'
 
   // Dữ liệu project
   const projects = [
     {
-      id: 'project-1',
-      name: 'Mobile App',
-      description: "Hieu's Team - Retail Application For Anything User Want To Sell, Have A Strong Security System And Millions Of Users",
+      id: "project-1",
+      name: "Mobile App",
+      description:
+        "Hieu's Team - Retail Application For Anything User Want To Sell, Have A Strong Security System And Millions Of Users",
       members: [
-        { name: 'Chloe Mendoza', role: 'Scrum Master', avatar: 'C', avatarImg: '/assets/images/avatar.jpg' },
-        { name: 'Nathan Long', role: 'Product Owner', avatar: 'N', avatarImg: '/assets/images/avatar.jpg' },
-        { name: 'Brian McCann', role: 'Dev Member', avatar: 'B', avatarImg: '/assets/images/avatar.jpg' },
-        { name: 'Thaddeus Silva', role: 'Dev Member', avatar: 'T', avatarImg: '/assets/images/avatar.jpg' },
-        { name: 'Kylian Mbappé', role: 'Dev Member', avatar: 'K', avatarImg: '/assets/images/avatar.jpg' }
+        {
+          name: "Chloe Mendoza",
+          role: "Scrum Master",
+          avatar: "C",
+          avatarImg: "/assets/images/avatar.jpg",
+        },
+        {
+          name: "Nathan Long",
+          role: "Product Owner",
+          avatar: "N",
+          avatarImg: "/assets/images/avatar.jpg",
+        },
+        {
+          name: "Brian McCann",
+          role: "Dev Member",
+          avatar: "B",
+          avatarImg: "/assets/images/avatar.jpg",
+        },
+        {
+          name: "Thaddeus Silva",
+          role: "Dev Member",
+          avatar: "T",
+          avatarImg: "/assets/images/avatar.jpg",
+        },
+        {
+          name: "Kylian Mbappé",
+          role: "Dev Member",
+          avatar: "K",
+          avatarImg: "/assets/images/avatar.jpg",
+        },
       ],
-      createdBy: 'Nguyen Minh Hieu',
-      createdAt: 'Feb 10, 2024',
-      epicsCompleted: '2/5',
+      createdBy: "Nguyen Minh Hieu",
+      createdAt: "Feb 10, 2024",
+      epicsCompleted: "2/5",
       sprintsCompleted: 3,
       epics: [
-        { name: 'Epic 3', progress: 50, color: '#f44336' },
-        { name: 'User Story 3.2', progress: 75, color: '#ff9800' }
-      ]
+        { name: "Epic 3", progress: 50, color: "#f44336" },
+        { name: "User Story 3.2", progress: 75, color: "#ff9800" },
+      ],
     },
     {
-      id: 'project-2',
-      name: 'E-Commerce Platform',
-      description: "My Friend Passed Away In A Car Crash Three Months Ago, And His Wrecked Car Was Playing This Song On Repeat. He Loved It So Much T...",
+      id: "project-2",
+      name: "E-Commerce Platform",
+      description:
+        "My Friend Passed Away In A Car Crash Three Months Ago, And His Wrecked Car Was Playing This Song On Repeat. He Loved It So Much T...",
       members: [
-        { name: 'Chloe Mendoza', role: 'Scrum Master', avatar: 'C', avatarImg: '/assets/images/avatar.jpg' },
-        { name: 'Brian McCann', role: 'Dev Member', avatar: 'B', avatarImg: '/assets/images/avatar.jpg' },
-        { name: 'Thaddeus Silva', role: 'Dev Member', avatar: 'T', avatarImg: '/assets/images/avatar.jpg' }
+        {
+          name: "Chloe Mendoza",
+          role: "Scrum Master",
+          avatar: "C",
+          avatarImg: "/assets/images/avatar.jpg",
+        },
+        {
+          name: "Brian McCann",
+          role: "Dev Member",
+          avatar: "B",
+          avatarImg: "/assets/images/avatar.jpg",
+        },
+        {
+          name: "Thaddeus Silva",
+          role: "Dev Member",
+          avatar: "T",
+          avatarImg: "/assets/images/avatar.jpg",
+        },
       ],
-      createdBy: 'Nguyen Minh Hieu',
-      createdAt: 'Feb 10, 2024',
-      epicsCompleted: '3/4',
+      createdBy: "Nguyen Minh Hieu",
+      createdAt: "Feb 10, 2024",
+      epicsCompleted: "3/4",
       sprintsCompleted: 5,
       epics: [
-        { name: 'Epic 2', progress: 80, color: '#4caf50' },
-        { name: 'User Story 2.1', progress: 60, color: '#2196f3' }
-      ]
+        { name: "Epic 2", progress: 80, color: "#4caf50" },
+        { name: "User Story 2.1", progress: 60, color: "#2196f3" },
+      ],
     },
     {
-      id: 'project-3',
-      name: 'CRM System',
-      description: "Hieu's Team - Retail Application For Anything User Want To Sell, Have A Strong Security System And Millions Of Users",
+      id: "project-3",
+      name: "CRM System",
+      description:
+        "Hieu's Team - Retail Application For Anything User Want To Sell, Have A Strong Security System And Millions Of Users",
       members: [
-        { name: 'Nathan Long', role: 'Product Owner', avatar: 'N', avatarImg: '/assets/images/avatar.jpg' },
-        { name: 'Brian McCann', role: 'Dev Member', avatar: 'B', avatarImg: '/assets/images/avatar.jpg' },
-        { name: 'Kylian Mbappé', role: 'Dev Member', avatar: 'K', avatarImg: '/assets/images/avatar.jpg' }
+        {
+          name: "Nathan Long",
+          role: "Product Owner",
+          avatar: "N",
+          avatarImg: "/assets/images/avatar.jpg",
+        },
+        {
+          name: "Brian McCann",
+          role: "Dev Member",
+          avatar: "B",
+          avatarImg: "/assets/images/avatar.jpg",
+        },
+        {
+          name: "Kylian Mbappé",
+          role: "Dev Member",
+          avatar: "K",
+          avatarImg: "/assets/images/avatar.jpg",
+        },
       ],
-      createdBy: 'Nguyen Minh Hieu',
-      createdAt: 'Feb 10, 2024',
-      epicsCompleted: '1/3',
+      createdBy: "Nguyen Minh Hieu",
+      createdAt: "Feb 10, 2024",
+      epicsCompleted: "1/3",
       sprintsCompleted: 2,
       epics: [
-        { name: 'Epic 1', progress: 30, color: '#f44336' },
-        { name: 'User Story 1.4', progress: 45, color: '#ff9800' }
-      ]
+        { name: "Epic 1", progress: 30, color: "#f44336" },
+        { name: "User Story 1.4", progress: 45, color: "#ff9800" },
+      ],
     },
     {
-      id: 'project-4',
-      name: 'Mobile Game',
-      description: "My Friend Passed Away In A Car Crash Three Months Ago, And His Wrecked Car Was Playing This Song On Repeat. He Loved It So Much T...",
+      id: "project-4",
+      name: "Mobile Game",
+      description:
+        "My Friend Passed Away In A Car Crash Three Months Ago, And His Wrecked Car Was Playing This Song On Repeat. He Loved It So Much T...",
       members: [
-        { name: 'Chloe Mendoza', role: 'Scrum Master', avatar: 'C', avatarImg: '/assets/images/avatar.jpg' },
-        { name: 'Thaddeus Silva', role: 'Dev Member', avatar: 'T', avatarImg: '/assets/images/avatar.jpg' },
-        { name: 'Kylian Mbappé', role: 'Dev Member', avatar: 'K', avatarImg: '/assets/images/avatar.jpg' }
+        {
+          name: "Chloe Mendoza",
+          role: "Scrum Master",
+          avatar: "C",
+          avatarImg: "/assets/images/avatar.jpg",
+        },
+        {
+          name: "Thaddeus Silva",
+          role: "Dev Member",
+          avatar: "T",
+          avatarImg: "/assets/images/avatar.jpg",
+        },
+        {
+          name: "Kylian Mbappé",
+          role: "Dev Member",
+          avatar: "K",
+          avatarImg: "/assets/images/avatar.jpg",
+        },
       ],
-      createdBy: 'Nguyen Minh Hieu',
-      createdAt: 'Feb 10, 2024',
-      epicsCompleted: '0/2',
+      createdBy: "Nguyen Minh Hieu",
+      createdAt: "Feb 10, 2024",
+      epicsCompleted: "0/2",
       sprintsCompleted: 1,
       epics: [
-        { name: 'Epic 4', progress: 10, color: '#9c27b0' },
-        { name: 'User Story 4.1', progress: 25, color: '#e91e63' }
-      ]
+        { name: "Epic 4", progress: 10, color: "#9c27b0" },
+        { name: "User Story 4.1", progress: 25, color: "#e91e63" },
+      ],
     },
     {
-      id: 'project-5',
-      name: 'HR Portal',
-      description: "Hieu's Team - Retail Application For Anything User Want To Sell, Have A Strong Security System And Millions Of Users",
+      id: "project-5",
+      name: "HR Portal",
+      description:
+        "Hieu's Team - Retail Application For Anything User Want To Sell, Have A Strong Security System And Millions Of Users",
       members: [
-        { name: 'Nathan Long', role: 'Product Owner', avatar: 'N', avatarImg: '/assets/images/avatar.jpg' },
-        { name: 'Brian McCann', role: 'Dev Member', avatar: 'B', avatarImg: '/assets/images/avatar.jpg' },
-        { name: 'Thaddeus Silva', role: 'Dev Member', avatar: 'T', avatarImg: '/assets/images/avatar.jpg' }
+        {
+          name: "Nathan Long",
+          role: "Product Owner",
+          avatar: "N",
+          avatarImg: "/assets/images/avatar.jpg",
+        },
+        {
+          name: "Brian McCann",
+          role: "Dev Member",
+          avatar: "B",
+          avatarImg: "/assets/images/avatar.jpg",
+        },
+        {
+          name: "Thaddeus Silva",
+          role: "Dev Member",
+          avatar: "T",
+          avatarImg: "/assets/images/avatar.jpg",
+        },
       ],
-      createdBy: 'Nguyen Minh Hieu',
-      createdAt: 'Feb 10, 2024',
-      epicsCompleted: '4/5',
+      createdBy: "Nguyen Minh Hieu",
+      createdAt: "Feb 10, 2024",
+      epicsCompleted: "4/5",
       sprintsCompleted: 7,
       epics: [
-        { name: 'Epic 5', progress: 90, color: '#2196f3' },
-        { name: 'User Story 5.3', progress: 85, color: '#4caf50' }
-      ]
+        { name: "Epic 5", progress: 90, color: "#2196f3" },
+        { name: "User Story 5.3", progress: 85, color: "#4caf50" },
+      ],
     },
     {
-      id: 'project-6',
-      name: 'Finance App',
-      description: "My Friend Passed Away In A Car Crash Three Months Ago, And His Wrecked Car Was Playing This Song On Repeat. He Loved It So Much T...",
+      id: "project-6",
+      name: "Finance App",
+      description:
+        "My Friend Passed Away In A Car Crash Three Months Ago, And His Wrecked Car Was Playing This Song On Repeat. He Loved It So Much T...",
       members: [
-        { name: 'Chloe Mendoza', role: 'Scrum Master', avatar: 'C', avatarImg: '/assets/images/avatar.jpg' },
-        { name: 'Nathan Long', role: 'Product Owner', avatar: 'N', avatarImg: '/assets/images/avatar.jpg' },
-        { name: 'Kylian Mbappé', role: 'Dev Member', avatar: 'K', avatarImg: '/assets/images/avatar.jpg' }
+        {
+          name: "Chloe Mendoza",
+          role: "Scrum Master",
+          avatar: "C",
+          avatarImg: "/assets/images/avatar.jpg",
+        },
+        {
+          name: "Nathan Long",
+          role: "Product Owner",
+          avatar: "N",
+          avatarImg: "/assets/images/avatar.jpg",
+        },
+        {
+          name: "Kylian Mbappé",
+          role: "Dev Member",
+          avatar: "K",
+          avatarImg: "/assets/images/avatar.jpg",
+        },
       ],
-      createdBy: 'Nguyen Minh Hieu',
-      createdAt: 'Feb 10, 2024',
-      epicsCompleted: '2/4',
+      createdBy: "Nguyen Minh Hieu",
+      createdAt: "Feb 10, 2024",
+      epicsCompleted: "2/4",
       sprintsCompleted: 4,
       epics: [
-        { name: 'Epic 6', progress: 60, color: '#ff5722' },
-        { name: 'User Story 6.2', progress: 40, color: '#795548' }
-      ]
-    }
+        { name: "Epic 6", progress: 60, color: "#ff5722" },
+        { name: "User Story 6.2", progress: 40, color: "#795548" },
+      ],
+    },
   ];
 
   // Xử lý khi click vào tab
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
-  
+
   // Lấy project đang được chọn
   const selectedProject = projects[selectedProjectIndex];
 
@@ -150,42 +256,81 @@ const ProjectsLayout = () => {
       <Row className="mt-4">
         <Col md={9}>
           <div className="project-tabs">
-            <span 
-              className={`tab ${activeTab === 'All' ? 'active' : ''}`}
-              onClick={() => handleTabClick('All')}
+            <span
+              className={`tab ${activeTab === "All" ? "active" : ""}`}
+              onClick={() => handleTabClick("All")}
             >
               All
             </span>
-            <span 
-              className={`tab ${activeTab === 'Started' ? 'active' : ''}`}
-              onClick={() => handleTabClick('Started')}
+            <span
+              className={`tab ${activeTab === "Started" ? "active" : ""}`}
+              onClick={() => handleTabClick("Started")}
             >
               Started
             </span>
-            <span 
-              className={`tab ${activeTab === 'Approval' ? 'active' : ''}`}
-              onClick={() => handleTabClick('Approval')}
+            <span
+              className={`tab ${activeTab === "Approval" ? "active" : ""}`}
+              onClick={() => handleTabClick("Approval")}
             >
               Approval
             </span>
-            <span 
-              className={`tab ${activeTab === 'Completed' ? 'active' : ''}`}
-              onClick={() => handleTabClick('Completed')}
+            <span
+              className={`tab ${activeTab === "Completed" ? "active" : ""}`}
+              onClick={() => handleTabClick("Completed")}
             >
               Completed
             </span>
             <div className="view-toggle">
               <Dropdown>
-                <Dropdown.Toggle variant="light" id="dropdown-view" className="view-toggle-btn">
-                  <i className={`fa fa-${viewMode === 'list' ? 'bars' : 'th-large'}`}></i> View
+                <Dropdown.Toggle
+                  variant="light"
+                  id="dropdown-view"
+                  className="view-toggle-btn"
+                >
+                  <img
+                    src={`/assets/icons/${viewMode}_icon.svg`}
+                    alt="View"
+                    className="view-icon"
+                  />{" "}
+                  View
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu>
-                  <Dropdown.Item onClick={() => setViewMode('list')}>
-                    <i className="fa fa-bars"></i> List
+                  <Dropdown.Item
+                    onClick={() => setViewMode("list")}
+                    className="dropdown-item-custom"
+                  >
+                    {viewMode === "list" && (
+                      <img
+                        src="/assets/icons/check_icon.svg"
+                        alt="Selected"
+                        className="check-icon"
+                      />
+                    )}
+                    <img
+                      src="/assets/icons/list_icon.svg"
+                      alt="List"
+                      className="view-icon"
+                    />
+                    List
                   </Dropdown.Item>
-                  <Dropdown.Item onClick={() => setViewMode('box')}>
-                    <i className="fa fa-th-large"></i> Box
+                  <Dropdown.Item
+                    onClick={() => setViewMode("box")}
+                    className="dropdown-item-custom"
+                  >
+                    {viewMode === "box" && (
+                      <img
+                        src="/assets/icons/check_icon.svg"
+                        alt="Selected"
+                        className="check-icon"
+                      />
+                    )}
+                    <img
+                      src="/assets/icons/box_icon.svg"
+                      alt="Box"
+                      className="view-icon"
+                    />
+                    Box
                   </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
@@ -193,7 +338,7 @@ const ProjectsLayout = () => {
           </div>
 
           <div className={`view-container ${viewMode}`}>
-            {viewMode === 'list' ? (
+            {viewMode === "list" ? (
               // List View
               <div className="project-table animated-items">
                 <div className="table-header">
@@ -205,9 +350,11 @@ const ProjectsLayout = () => {
                 </div>
 
                 {projects.map((project, index) => (
-                  <div 
-                    key={project.id} 
-                    className={`table-row animated-item item-${index} ${selectedProjectIndex === index ? 'selected' : ''}`}
+                  <div
+                    key={project.id}
+                    className={`table-row animated-item item-${index} ${
+                      selectedProjectIndex === index ? "selected" : ""
+                    }`}
                     onClick={() => handleProjectClick(index)}
                   >
                     <div className="cell checkbox-cell">
@@ -217,21 +364,35 @@ const ProjectsLayout = () => {
                     <div className="cell members-cell">
                       <div className="avatar-group">
                         {project.members.slice(0, 3).map((member, i) => (
-                          <span key={i} className="avatar" style={{zIndex: 10-i}}>
+                          <span
+                            key={i}
+                            className="avatar"
+                            style={{ zIndex: 10 - i }}
+                          >
                             {member.avatarImg ? (
-                              <img src={member.avatarImg} alt={member.name} className="avatar-img" />
+                              <img
+                                src={member.avatarImg}
+                                alt={member.name}
+                                className="avatar-img"
+                              />
                             ) : (
                               member.avatar
                             )}
                           </span>
                         ))}
                         {project.members.length > 3 && (
-                          <span className="avatar more-avatar">+{project.members.length - 3}</span>
+                          <span className="avatar more-avatar">
+                            +{project.members.length - 3}
+                          </span>
                         )}
                       </div>
                     </div>
-                    <div className="cell created-by-cell">{project.createdBy}</div>
-                    <div className="cell created-at-cell">{project.createdAt}</div>
+                    <div className="cell created-by-cell">
+                      {project.createdBy}
+                    </div>
+                    <div className="cell created-at-cell">
+                      {project.createdAt}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -240,37 +401,56 @@ const ProjectsLayout = () => {
               <div className="project-grid animated-items">
                 <Row>
                   {projects.map((project, index) => (
-                    <Col md={4} lg={4} key={project.id} className={`animated-item item-box-${index}`}>
-                      <div 
-                        className={`project-card ${selectedProjectIndex === index ? 'selected' : ''}`}
+                    <Col
+                      md={4}
+                      lg={4}
+                      key={project.id}
+                      className={`animated-item item-box-${index}`}
+                    >
+                      <div
+                        className={`project-card ${
+                          selectedProjectIndex === index ? "selected" : ""
+                        }`}
                         onClick={() => handleProjectClick(index)}
                       >
                         <div className="card-header">
                           <div className="project-card-icon">
-                            <img 
-                              src="/assets/icons/project_icon.svg" 
-                              alt="Project" 
+                            <img
+                              src="/assets/icons/project_icon.svg"
+                              alt="Project"
                             />
                           </div>
                           <div className="header-content">
-                            <div className="project-card-title">{project.name}</div>
+                            <div className="project-card-title">
+                              {project.name}
+                            </div>
                             <div className="avatar-group">
                               {project.members.slice(0, 3).map((member, i) => (
-                                <span key={i} className="avatar" style={{zIndex: 10-i}}>
+                                <span
+                                  key={i}
+                                  className="avatar"
+                                  style={{ zIndex: 10 - i }}
+                                >
                                   {member.avatarImg ? (
-                                    <img src={member.avatarImg} alt={member.name} className="avatar-img" />
+                                    <img
+                                      src={member.avatarImg}
+                                      alt={member.name}
+                                      className="avatar-img"
+                                    />
                                   ) : (
                                     member.avatar
                                   )}
                                 </span>
                               ))}
                               {project.members.length > 3 && (
-                                <span className="avatar more-avatar">+{project.members.length - 3}</span>
+                                <span className="avatar more-avatar">
+                                  +{project.members.length - 3}
+                                </span>
                               )}
                             </div>
                           </div>
                         </div>
-                        
+
                         <div className="card-description">
                           {project.description}
                         </div>
@@ -279,9 +459,13 @@ const ProjectsLayout = () => {
                             <div className="creator-avatar">
                               {project.createdBy.charAt(0)}
                             </div>
-                            <div className="creator-name">{project.createdBy}</div>
+                            <div className="creator-name">
+                              {project.createdBy}
+                            </div>
                           </div>
-                          <div className="creation-date">{project.createdAt}</div>
+                          <div className="creation-date">
+                            {project.createdAt}
+                          </div>
                         </div>
                       </div>
                     </Col>
@@ -296,10 +480,7 @@ const ProjectsLayout = () => {
           <div className="project-detail-panel">
             <div className="project-title">
               <div className="project-card-icon">
-                <img 
-                  src="/assets/icons/project_icon.svg" 
-                  alt="Project" 
-                />
+                <img src="/assets/icons/project_icon.svg" alt="Project" />
               </div>
               <h3>{selectedProject.name}</h3>
             </div>
@@ -314,7 +495,11 @@ const ProjectsLayout = () => {
                 <div key={index} className="member-item">
                   <span className="member-avatar">
                     {member.avatarImg ? (
-                      <img src={member.avatarImg} alt={member.name} className="avatar-img" />
+                      <img
+                        src={member.avatarImg}
+                        alt={member.name}
+                        className="avatar-img"
+                      />
                     ) : (
                       member.avatar
                     )}
@@ -330,16 +515,22 @@ const ProjectsLayout = () => {
             <div className="summary-section">
               <div className="summary-header">
                 <h5>Summary</h5>
-                <Button variant="warning" size="sm" className="detail-btn">Go to Detail</Button>
+                <Button variant="warning" size="sm" className="detail-btn">
+                  Go to Detail
+                </Button>
               </div>
-              
+
               <div className="summary-item d-flex justify-content-between">
                 <div className="summary-label">Epic Completed</div>
-                <div className="summary-value">{selectedProject.epicsCompleted}</div>
+                <div className="summary-value">
+                  {selectedProject.epicsCompleted}
+                </div>
               </div>
               <div className="summary-item d-flex justify-content-between">
                 <div className="summary-label">Sprints Completed</div>
-                <div className="summary-value">{selectedProject.sprintsCompleted}</div>
+                <div className="summary-value">
+                  {selectedProject.sprintsCompleted}
+                </div>
               </div>
 
               <div className="progress-section">
@@ -350,20 +541,32 @@ const ProjectsLayout = () => {
                       <div className="progress-value">{epic.progress}%</div>
                     </div>
                     <div className="progress-bar">
-                      <div className="progress-fill" style={{width: `${epic.progress}%`, backgroundColor: epic.color}}></div>
+                      <div
+                        className="progress-fill"
+                        style={{
+                          width: `${epic.progress}%`,
+                          backgroundColor: epic.color,
+                        }}
+                      ></div>
                     </div>
                   </div>
                 ))}
               </div>
 
-              <Button variant="danger" className="go-to-project-btn">Go To Project</Button>
-              
+              <Button variant="danger" className="go-to-project-btn">
+                Go To Project
+              </Button>
+
               <div className="create-ai-container">
                 <Button variant="outline-warning" className="create-ai-btn">
                   <i className="fa fa-robot"></i> Create AI
                 </Button>
                 <div className="ai-icon-circle">
-                  <img src="/assets/icons/ai_icon.svg" alt="AI Icon" className="ai-icon" />
+                  <img
+                    src="/assets/icons/ai_icon.svg"
+                    alt="AI Icon"
+                    className="ai-icon"
+                  />
                 </div>
               </div>
             </div>
