@@ -5,6 +5,7 @@ const Navigation = () => {
   return (
     <nav className="navbar bg-white border-bottom" style={{ height: "60px" }}>
       <div className="container" style={{ maxWidth: "1200px" }}>
+        {/* Option 1: Sử dụng đường dẫn thực */}
         <a className="navbar-brand d-flex align-items-center" href="/home">
           <img
             src="/assets/images/logo.png"

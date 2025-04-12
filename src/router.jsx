@@ -1,52 +1,18 @@
-// import { createBrowserRouter } from "react-router-dom";
-// import AuthInterface from "./components/AuthInterface";
-// import Sidebar from "./components/Sidebar";
-// import TaskDetails from './components/TaskDetails/TaskDetail';
-
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <AuthInterface />,
-//   },
-//   {
-//     path: "/sidebar",
-//     element: <Sidebar />,
-//   },
-//   {
-//     path: "/login",
-//     element: <AuthInterface />,
-//   },
-//   {
-//     path: "/register",
-//     element: <AuthInterface />,
-//   },
-//   {
-//     path: "/task/:id",
-//     element: <TaskDetails/>,
-//   },
-// ]);
-
-// export default router;
-
 import { createBrowserRouter } from "react-router-dom";
+import React from "react";
 import AuthInterface from "./components/AuthInterface";
-import Sidebar from "./components/Sidebar";
-import TaskDetails from './components/TaskDetails/TaskDetail';
-import ProjectsLayout from './components/Projects/ProjectLayout';
+import ProjectPageBoard from "./components/ProjectPageBoard";
+import ProjectPageList from "./components/ProjectPageList";
+import TaskDetail from "./components/TaskDetails/TaskDetail";
+import ProjectsLayout from "./components/Projects/ProjectLayout";
+import CreateTask from "./components/TaskDetail";
+import CopyTaskDetail from "./components/TaskDetails/CopyTaskDetaill";
 
-const MainLayout = ({ children }) => (
-  <div className="d-flex">
-    <Sidebar />
-    <div className="content-area flex-grow-1">
-      {children}
-    </div>
-  </div>
-);
-
+// Router configuration
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <AuthInterface />,
+    element: <AuthInterface />, // Trang đăng nhập/đăng ký mặc định
   },
   {
     path: "/login",
@@ -57,22 +23,36 @@ const router = createBrowserRouter([
     element: <AuthInterface />,
   },
   {
-    path: "/sidebar",
-    element: <MainLayout>
-
-    </MainLayout>,
+    path: "/project/board/:projectId",
+    element: <ProjectPageBoard />,
+  },
+  {
+    path: "/project/list/:projectId",
+    element: <ProjectPageList />,
+  },
+  {
+    path: "/project",
+    element: <ProjectsLayout />,
+  },
+  {
+    path: "/project/:projectId/task/:taskId",
+    element: <TaskDetail />,
+  },
+  {
+    path: "/task/add/:id",
+    element: <CreateTask />,
+  },
+  {
+    path: "/task/add",
+    element: <CreateTask />,
   },
   {
     path: "/projects",
-    element: <MainLayout>
-      <ProjectsLayout />
-    </MainLayout>,
+    element: <ProjectsLayout />,
   },
   {
-    path: "/task/:id",
-    element: <MainLayout>
-      <TaskDetails />
-    </MainLayout>,
+    path: "/projects/:projectId/tasks/:taskId",
+    element: <CopyTaskDetail />,
   },
 ]);
 
